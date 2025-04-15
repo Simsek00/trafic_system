@@ -43,8 +43,3 @@ int main() {
     return 0;
 }
 
-    std::cout << "Sonuc: " << sonuc << std::endl;
-    std::cin.get(); 
-    
-    return 0;
-}
