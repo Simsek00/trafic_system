@@ -8,7 +8,49 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="resources\trafficlightart-01.png" />
+    <None Remove="resources\trafficlightart-02.png" />
+    <None Remove="resources\trafficlightart-03.png" />
+    <None Remove="resources\trafficlightart-04.png" />
+    <None Remove="resources\trafficlightart-05.png" />
+    <None Remove="resources\trafficlightart-11.png" />
+    <None Remove="resources\trafficlightart-12.png" />
+    <None Remove="resources\trafficlightart-17.png" />
+    <None Remove="trafficlightart-05.png" />
+    <None Remove="trafficlightart-17.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="System.IO.Ports" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="resources\trafficlightart-01.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\trafficlightart-02.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\trafficlightart-03.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\trafficlightart-04.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\trafficlightart-05.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\trafficlightart-11.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\trafficlightart-12.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="resources\trafficlightart-17.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="trafficlightart-05.png" />
+    <Resource Include="trafficlightart-17.png" />
   </ItemGroup>
 
 </Project>

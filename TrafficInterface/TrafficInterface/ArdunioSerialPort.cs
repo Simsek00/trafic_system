@@ -14,6 +14,8 @@ namespace TrafficInterface
     {
         private static SerialPort serialPort;
 
+        private static String bekleyenveri;
+
         public static event Action<string> VeriGeldi;
 
         public static async Task Baslat(int baudRate = 9600)
@@ -47,10 +49,22 @@ namespace TrafficInterface
                 try
                 {
                     string gelenveri = serialPort.ReadExisting();
-                    if( !string.IsNullOrWhiteSpace(gelenveri)) 
+                    bekleyenveri += gelenveri;
+
+                    if (bekleyenveri.Contains("\n"))
                     {
-                        VeriGeldi?.Invoke(gelenveri);
+                        bekleyenveri.Remove(0);
+                        if (!string.IsNullOrWhiteSpace(bekleyenveri))
+                        {
+                            
+                            VeriGeldi?.Invoke(bekleyenveri);
+                        }
                     }
+                    
+
+
+
+                    
                     
                 }
                 catch (IOException ex)
@@ -85,7 +99,7 @@ namespace TrafficInterface
                             // Cevap bekle
                             await Task.Delay(500);  // Arduino’nun cevap vermesi için biraz zaman ver
 
-                            string cevap = port.ReadLine().Trim();
+                            string cevap = port.ReadExisting();
 
                             if (cevap.Contains("pong"))
                             {

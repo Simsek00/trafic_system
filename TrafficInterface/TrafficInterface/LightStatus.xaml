@@ -5,54 +5,51 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:TrafficInterface"
       mc:Ignorable="d"
-      Title="LightStatus" Width="311" Height="454">
+      Title="LightStatus" Width="311" Height="479">
 
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FFB8B5D9"/>
-                <GradientStop Color="#FF38346C" Offset="1"/>
+                <GradientStop Color="#FFD4D1F7"/>
+                <GradientStop Color="#FF9AE5FF" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Border BorderBrush="Black" BorderThickness="1" Margin="10,65,213,191" Background="#FF2B2828">
-            <StackPanel>
-                <Rectangle x:Name="T_RedLight" Height="47" Stroke="Black" Width="50" Fill="Red" Margin="0,15,0,0"/>
-                <Rectangle x:Name="T_YellowLight" Height="47" Stroke="Black" Width="50" Fill="#FF3F4200" Margin="0,15,0,0"/>
-                <Rectangle x:Name="T_YellowLight_Kopyala" Height="47" Stroke="Black" Width="50" Fill="#FF074D01" Margin="0,15,0,0"/>
-            </StackPanel>
+        <Border BorderBrush="Black" BorderThickness="1" Margin="38,245,249,23" Background="#FF2B2828"/>
+        <Border x:Name="CarLight" BorderThickness="1" Margin="6,65,217,196">
+            <Border.Background>
+                <ImageBrush ImageSource="/trafficlightart-05.png" Stretch="UniformToFill"/>
+            </Border.Background>
         </Border>
         <TextBlock x:Name="LightName" HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" Text="LightName" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
-        <Border BorderBrush="Black" BorderThickness="1" Margin="42,263,245,10" Background="#FF2B2828"/>
-        <Border BorderBrush="Black" BorderThickness="1" Margin="71,288,199,86" Background="#FF2B2828">
-            <StackPanel>
-                <Border x:Name="P_RedLight" BorderBrush="Black" BorderThickness="1" Height="25" Width="25" Background="#FF4A0000" Margin="0,10,0,0"/>
-                <Border x:Name="P_GreenLight" BorderBrush="Black" BorderThickness="1" Height="25" Width="25" Background="Lime" Margin="0,10,0,0"/>
-            </StackPanel>
+        <Border x:Name="P_Light" BorderThickness="1" Margin="15,288,226,121" Width="70" Height="70">
+            <Border.Background>
+                <ImageBrush ImageSource="/trafficlightart-17.png" Stretch="Fill"/>
+            </Border.Background>
         </Border>
-        <StackPanel Margin="120,65,10,29">
-            <StackPanel Orientation="Horizontal">
+        <StackPanel Margin="109,65,10,23" Background="#7FFFFFFF">
+            <StackPanel Orientation="Horizontal" Margin="5,0,0,0">
                 <TextBlock TextWrapping="Wrap" Text="Profil:" FontSize="18" Width="88"/>
                 <TextBlock TextWrapping="Wrap" FontSize="18" Text="YOĞUN" Width="94" Padding="15,0,0,0"/>
             </StackPanel>
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal" Margin="5,0,0,0">
                 <TextBlock TextWrapping="Wrap" Text="Mod:" FontSize="18" Width="88"/>
                 <TextBlock TextWrapping="Wrap" FontSize="18" Text="GECE" Width="94" Padding="15,0,0,0"/>
             </StackPanel>
             <TextBlock TextWrapping="Wrap" Text="Araç Trafik Işığı" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,18,0,0" FontSize="18" FontWeight="Bold"/>
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal" Margin="5,0,0,0">
                 <TextBlock TextWrapping="Wrap" Text="Kalan Süre:" FontSize="18"/>
                 <TextBlock TextWrapping="Wrap" Text="15" FontSize="18" Width="94" Padding="15,0,0,0"/>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+            <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
                 <TextBlock TextWrapping="Wrap" Text="Geçen Araba Sayısı" FontSize="18" Height="77" Width="86"/>
                 <TextBlock TextWrapping="Wrap" Text="5" FontSize="18" Width="94" Padding="15,0,0,0" VerticalAlignment="Center"/>
             </StackPanel>
             <TextBlock TextWrapping="Wrap" Text="Yaya Trafik Işığı" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0"/>
-            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+            <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
                 <TextBlock TextWrapping="Wrap" Text="Kalan Süre:" FontSize="18"/>
                 <TextBlock TextWrapping="Wrap" Text="15" FontSize="18" Width="94" Padding="15,0,0,0"/>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+            <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
                 <TextBlock TextWrapping="Wrap" FontSize="18" Text="Yaya Buton Sayısı:" Width="88"/>
                 <TextBlock TextWrapping="Wrap" Text="15" FontSize="18" Width="94" Padding="15,0,0,0" VerticalAlignment="Center"/>
             </StackPanel>
