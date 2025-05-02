@@ -24,9 +24,14 @@ namespace TrafficInterface
         LightStatus Light2 = new LightStatus();
         LightStatus Light3 = new LightStatus();
         LightStatus Light4 = new LightStatus();
-        public TrafficSystemDisplayer()
+        Frame backframe;
+        public TrafficSystemDisplayer(Frame lastframe)
         {
             InitializeComponent();
+            this.PreviewKeyDown += Page_PreviewKeyDown;
+            this.Focusable = true;
+            this.Loaded += (s, e) => Keyboard.Focus(this);
+            backframe = lastframe as Frame;
             Light1.LightName.Text = "Light 1";
             Light2.LightName.Text = "Light 2";
             Light3.LightName.Text = "Light 3";
@@ -124,6 +129,19 @@ namespace TrafficInterface
 
 
         }
+        private void Page_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+            {
+                backframe.NavigationService.GoBack();
+                backframe.Visibility = Visibility.Hidden;
+            }
+        }
 
+        private void ButtonBack_Click(object sender, RoutedEventArgs e)
+        {
+            backframe.NavigationService.GoBack();
+            backframe.Visibility = Visibility.Hidden;
+        }
     }
 }

@@ -31,8 +31,11 @@ namespace TrafficInterface
 
         private void Button_Click (object sender, RoutedEventArgs e)
         {
-            FrameMain.Navigate(new TrafficSystemDisplayer());
+            TrafficSystemDisplayer pageTrafficSystem = new TrafficSystemDisplayer(FrameMain);
+            FrameMain.Navigate(pageTrafficSystem);
+            pageTrafficSystem.Focus();
             FrameMain.Visibility = Visibility.Visible;
+
         }
         private void ArdunioSerialPort_VeriGeldi(string veri)
         {
