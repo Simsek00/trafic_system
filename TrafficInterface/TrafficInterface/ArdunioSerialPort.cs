@@ -85,9 +85,14 @@ namespace TrafficInterface
                     {
                         using (SerialPort port = new SerialPort(portName, 9600))
                         {
-                            port.ReadTimeout = 3000;
-                            port.WriteTimeout = 3000;
-                            port.Open();
+                            // Port ayarları
+                            port.ReadTimeout = 1000;
+                            port.WriteTimeout = 1000;
+
+                            if (!port.IsOpen)
+                            {
+                                port.Open(); // Eğer açık değilse aç
+                            }
 
                             // Temizlik
                             port.DiscardInBuffer();
@@ -96,17 +101,20 @@ namespace TrafficInterface
                             // Ping gönder
                             port.WriteLine("ping");
 
-                            // Cevap bekle
-                            await Task.Delay(500);  // Arduino’nun cevap vermesi için biraz zaman ver
+                            // Cevap bekle, zamanlayıcıyı artırarak daha fazla bekle
+                            await Task.Delay(1000);  // Arduino’nun cevap vermesi için biraz daha fazla zaman ver
 
+                            // Cevap oku
                             string cevap = port.ReadExisting();
 
+                            // Eğer "pong" cevabını alırsak doğru port bulduk
                             if (cevap.Contains("pong"))
                             {
-                                port.Close();  // Portu kapatmadan önce portName'ı döndür
+                                port.Close();  // Portu kapat
                                 return portName;  // Doğru port bulundu
                             }
 
+                            // Eğer "pong" cevabı gelmediyse, portu kapat
                             port.Close();
                         }
                     }
@@ -115,8 +123,6 @@ namespace TrafficInterface
                         Console.WriteLine($"Port hatası: {ex.Message}");
                     }
                 }
-
-                
             }
         }
     }
