@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,7 @@ namespace TrafficInterface
     /// </summary>
     public partial class TrafficSystemDisplayer : Page
     {
+        int Yayabutonsayisi = 0;
         LightStatus Light1 = new LightStatus();
         LightStatus Light2 = new LightStatus();
         LightStatus Light3 = new LightStatus();
@@ -73,6 +75,16 @@ namespace TrafficInterface
                         ParseLightAndColor(light);
 
                     }
+                }
+                // YAYA BUTON TIKLANMA SAYISI
+                index = veri.IndexOf("3 Nolu yaya talebi");
+                if (index != -1)
+                {
+                    Yayabutonsayisi++;
+                    Light1.YayaButonText.Text = Yayabutonsayisi.ToString();
+                    Light2.YayaButonText.Text = Yayabutonsayisi.ToString();
+                    Light3.YayaButonText.Text = Yayabutonsayisi.ToString();
+                    Light4.YayaButonText.Text = Yayabutonsayisi.ToString();
                 }
                 
             });

@@ -67,8 +67,13 @@ namespace TrafficInterface
             profile1.CarRLight.Text = CRLight;
             profile1.CarYLight.Text = CYLight;
             profile1.CarGLight.Text = CGLight;
-
+            ArdunioSerialPort.serialPort.WriteLine("ELLE:"+" "+CRLight+" "+CYLight+" "+CGLight);
            
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

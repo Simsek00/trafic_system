@@ -21,12 +21,10 @@
             <RowDefinition Height="137*"/>
         </Grid.RowDefinitions>
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Trafik Kontrol Sistemi" VerticalAlignment="Center" Margin="0,141,0,0" FontSize="36" Foreground="White" FontFamily="Global User Interface"/>
-        <StackPanel VerticalAlignment="Center" Orientation="Horizontal" Margin="0,222,0,0" HorizontalAlignment="Center" Height="60" Width="230" Grid.RowSpan="2">
+        <StackPanel Orientation="Horizontal" Height="60" Width="60" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,28,0,0" Grid.Row="1">
             <Button x:Name="SistemDurumuButonu" Content="Sistem Durumu" Height="60.3" Width="60" Click="Button_Click"/>
-            <Button x:Name="ProfillerButonu" Content="Profiller" Height="60.3" Width="60" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="25,0,0,0"/>
-            <Button x:Name="KayıtlarButonu" Content="Kayıtlar" Height="60.3" Width="60" Margin="25,0,0,0"/>
         </StackPanel>
-        <Frame x:Name="FrameMain" Content="Frame" Margin="2,0,2,0" Grid.RowSpan="3"/>
+        <Frame x:Name="FrameMain" Content="&quot;&quot;" Margin="2,0,2,0" Grid.RowSpan="3"/>
 
     </Grid>
 </Page>

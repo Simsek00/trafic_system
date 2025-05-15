@@ -51,7 +51,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
                 <TextBlock TextWrapping="Wrap" FontSize="18" Text="Yaya Buton Sayısı:" Width="88"/>
-                <TextBlock TextWrapping="Wrap" Text="15" FontSize="18" Width="94" Padding="15,0,0,0" VerticalAlignment="Center"/>
+                <TextBlock x:Name="YayaButonText" TextWrapping="Wrap" Text="0" FontSize="18" Width="94" Padding="15,0,0,0" VerticalAlignment="Center"/>
             </StackPanel>
         </StackPanel>
     </Grid>

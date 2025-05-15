@@ -12,7 +12,7 @@ namespace TrafficInterface
 {
     public static class ArdunioSerialPort
     {
-        private static SerialPort serialPort;
+        public static SerialPort serialPort;
 
         private static String bekleyenveri;
 
